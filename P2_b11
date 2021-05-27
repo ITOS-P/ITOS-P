@@ -1,0 +1,31 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class b11 {
+   int n,du;
+   void input(){
+       Scanner kb=new Scanner (System.in);
+       do{
+           System.out.println("Nhap n:");
+           n=kb.nextInt();
+       }while(n<0);
+   }
+   int daoNguoc(int x){
+       int s = 0;
+       while(x>0){
+           du=x%10;
+           s=s*10+du;
+           x=x/10;
+       }
+       return s;
+   }
+   void output(){
+       System.out.println("So dao nguoc :"+daoNguoc(n));
+   }
+   public static void main(String[] x){
+       b11 a= new b11();
+       a.input();
+       a.output();
+   }
+}
