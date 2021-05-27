@@ -1,0 +1,37 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class b13 {
+    int n,du;
+    void input(){
+        Scanner kb = new Scanner(System.in);
+        do{
+            System.out.print("Nhap 1 so >0:");
+            n=kb.nextInt();
+        }while(n<=0);
+    }
+    int loai5va0(int x){
+        int s =0;
+        while(x!=0){
+            du=x%10;
+            if(du!=0&&du!=5)s=s*10+du;
+            x=x/10;
+        }
+        int dao=0;
+        while(s!=0){
+            du=s%10;
+            dao=dao*10+du;
+            s=s/10;
+        }
+        return dao;
+    }   
+    void output(){
+        System.out.print("So sau khi loai 0 & 5 la :"+ loai5va0(n)+"\n" ); 
+    }
+    public static void main(String []x){
+        b13  a=new b13();
+        a.input();
+        a.output();
+    }
+}
