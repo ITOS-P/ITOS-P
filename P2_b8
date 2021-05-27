@@ -1,0 +1,39 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class bai8 {
+     int n,s=0;
+    void input(){
+        Scanner kb=new Scanner (System.in);
+        System.out.println("Nhap n;");
+        n=kb.nextInt();
+        for(int i=1; i<=n; i++){
+            System.out.print("Nhap x:");
+            int x=kb.nextInt();
+            if(nguyenTo(x)==true) s=s+x;
+        }
+    }
+   
+    boolean nguyenTo(int x){
+        int dem=0;
+        for(int i=1; i<=x; i++)
+                if(x%i==0) dem++;
+        return dem==2;
+    }
+    void output(){
+        int x=0;
+        System.out.print("S("+n+")=");
+        for(int i=1; i<=x; i++){
+        if(nguyenTo(x)==true) System.out.println(i+"+");
+        }
+        System.out.println("\b="+s);
+    }
+     public static void main(String [] x){
+        bai8 a=new bai8();
+        a.input();
+        a.output();
+        
+    }
+ 
+}
