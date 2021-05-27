@@ -1,0 +1,32 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class lietkesont {
+    int n;
+    void input(){
+        Scanner kb=new Scanner(System.in);
+        do{
+            System.out.println("nhap n:");
+            n=kb.nextInt();
+        }while(n<=0);
+    }
+    boolean nguyenTo(int x){
+        int dem=0;
+        for(int i=1; i<=x; i++)
+            if(x%i==0) dem++;
+        return dem==2;
+    }
+    void output(){
+        for(int i=1; i<=n; i++)
+            if(nguyenTo(i)==true)
+                System.out.print(i+" ");
+    }
+    public static void main(String[] x){
+        lietkesont a= new lietkesont();
+        a.input();
+        a.output();
+              
+                
+    }
+}
