@@ -1,0 +1,64 @@
+package MauPhan3;
+
+import java.util.*;
+
+public class b2 {
+    ArrayList<Integer> a= new ArrayList<Integer>();
+    void input(){
+        Scanner kb = new Scanner(System.in);
+        int n;
+        do{
+            System.out.print("Nhap n>0: ");
+            n = kb.nextInt();
+        }while(n<=0);
+        for(int i=0;i<n;i++)
+            a.add((int)(int)(Math.random()*100));
+    }
+     void xuat(String nd){
+        System.out.print(nd);
+        for(int i=0;i<a.size();i++)
+            System.out.print(a.get(i)+" ");
+        System.out.println("");
+    }
+     int tinhTong(int x){
+	int s=0;
+	long n;
+	while(x!=0){
+            n= x%10;
+            s+= n;
+            x/=10;
+	}
+	return s;
+    }
+     void xuatKQ(){
+         for(int i=0; i<a.size(); i++){
+             if(tinhTong(a.get(i))>10)
+                 System.out.print(a.get(i)+" ");
+         }
+     }
+     void sapXepTang(){
+            for(int i=0; i<a.size()-1; i++)
+                for(int j=i+1; j<a.size(); j++)
+                    if(a.get(i)>a.get(j)){
+                        int t=a.get(i);
+                        a.set(i,a.get(j));
+                        a.set(j,t);               
+        }
+    }
+     void chen(int x){
+        while(a.contains(x))
+                a.remove((Integer)x);
+     }
+     void output(){
+        xuat("Mang vua tao: ");
+        int x = 0;
+        xuatKQ();
+        chen(x);
+     }
+    public static void main(String[] args){
+        b2 a= new b2();
+        a.input();
+        a.output();
+    }
+
+}
