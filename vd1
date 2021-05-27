@@ -1,0 +1,47 @@
+package MauPhan3;
+
+import java.util.Scanner;
+
+public class vd1 {
+    int a[]=new int [100];
+    int n;
+    void input(){
+        Scanner kb= new Scanner (System.in);
+        do{
+            System.out.print("Nhap so >o:");
+            n=kb.nextInt();
+        }while(n<0);
+        System.out.print("Nhap"+n+"so nguyen:");
+        for(int i=0; i<n; i++)
+                a[i]=kb.nextInt();
+    }
+    boolean nguyenTo(int x){
+        int dem=0;
+        for(int i=1; i<=x; i++)
+            if(x%i==0) dem++;
+        return dem==2;
+  
+    }
+    void xuatMang(){
+        for(int i=0; i<n; i++)
+            System.out.print(a[i]+" ");
+    }
+    void output(){
+        System.out.print("Noi dung mang:");
+        xuatMang();
+        System.out.print("\nTong cac so nguyen to=");
+        int s=0;
+        for(int i=0; i<=n; i++)
+            if(nguyenTo(a[i])==true){
+                System.out.print(a[i]+"+");
+                s=s+a[i];
+            }
+        System.out.println("\b="+s);
+    }
+    
+    public static void main(String [] x){
+        vd1 a=new vd1();
+        a.input();
+        a.output();
+    }
+}
