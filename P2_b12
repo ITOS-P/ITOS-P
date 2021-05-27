@@ -1,0 +1,32 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class b12 {
+   int n,du;
+   void input(){
+       Scanner kb=new Scanner (System.in);
+       do{
+           System.out.println("Nhap n:");
+           n=kb.nextInt();
+       }while(n<0);
+   }
+   int soMax(int x){
+       int s=0;
+       while(x>0){
+           du=x%10;
+           if(s<du) s=du;
+           x=x/10;
+       }
+       return s;
+   }
+   void output(){
+       System.out.println("So lon nhat la :"+soMax(n));
+   }
+   public static void main(String[] x){
+       b12 a=new b12();
+       a.input();
+       a.output();
+   }
+    
+}
