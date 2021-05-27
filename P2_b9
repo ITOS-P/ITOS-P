@@ -1,0 +1,31 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class b9 {
+    int n;
+    void input(){
+        Scanner kb=new Scanner (System.in);
+        do{
+            System.out.println("Nhap n;");
+            n=kb.nextInt();
+        }while(n<0);
+    }
+    boolean hoanThien(int x){
+        int s=0;
+        for(int i=1; i<=x/2; i++)
+            if(x%i==0) s=s+i;
+            
+        return s==x;
+    }
+    void output(){
+        for(int i=1; i<=n; i++)
+                if(hoanThien(i)==true)
+                    System.out.println(i+" ");
+    }
+    public static void main(String[] x){
+        b9 a=new b9();
+        a.input();
+        a.output();
+    }
+}
