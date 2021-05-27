@@ -1,0 +1,31 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class b1 {
+    int n;
+    void input(){
+        Scanner kb=new Scanner(System.in);
+        System.out.print("Nhap n:");
+        n=kb.nextInt();
+        
+    }
+    double tinhTong(int x){
+        double s=0;
+        for(int i=1; i<=n;i++)
+            s=s+1.0/i;
+        return s;
+        
+    }
+    void output(){
+        System.out.print("S("+n+")=");
+        for(int i=1; i<=n; i++)
+            System.out.print("1/"+i+"+");
+        System.out.print("\b="+ tinhTong(n));
+    }
+    public static void main(String[]x){
+        b1 a=new b1();
+        a.input();
+        a.output();
+    }
+}
