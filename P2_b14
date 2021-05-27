@@ -1,0 +1,42 @@
+package MauPhan2;
+
+import java.util.Scanner;
+
+public class b14 {
+    int n,du;
+    void input(){
+        Scanner kb=new Scanner(System.in);
+        do{
+            System.out.println("Nhap n:");
+            n=kb.nextInt();
+            
+        }while(n<=0);
+        
+    }
+    int dao(int x){
+        int s=0;
+        while(x!=0){
+            du=x%10;
+            s=s*10+du;
+            x=x/10;
+        }
+        return s;
+    }
+    boolean doiXung(int x){
+        if(x>10 && dao(x)==x) return true;
+        return false;
+    }
+    void output(){
+        for(int i=1; i<=n; i++){
+            if(doiXung(i)==true) 
+                System.out.println(i+ " ");
+        }
+    }
+    public static void main(String[] x){
+        b14 a=new b14();
+        a.input();
+        a.output();
+        
+    }
+    
+}
