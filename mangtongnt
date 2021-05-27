@@ -1,0 +1,46 @@
+package MauPhan3;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class mangTongNT {
+    ArrayList<Integer> a= new ArrayList<Integer>();
+    void input(){
+        int n;
+        Scanner kb= new Scanner(System.in);
+        do{
+            System.out.print("Nhap so >0:");
+            n=kb.nextInt();
+        }while(n<0);
+        System.out.print("Nhap"+n+"so nguyen:");
+        for(int i=0; i<n; i++)
+            a.add(kb.nextInt());
+    }
+    boolean nguyenTo(int x){
+        int dem=0;
+        for(int i=1; i<=x; i++)
+            if(x%i==0) dem++;
+        return dem==2;
+    }
+    void xuatMang(){
+        for(int i=0; i<a.size(); i++)
+            System.out.print(a.get(i)+" ");
+    }
+    void output(){
+        System.out.print("Noi dung mang:");
+        xuatMang();
+        System.out.print("Tong cac so nguyen to=");
+        int s=0;
+        for(int i=0; i<a.size(); i++){
+            if(nguyenTo(a.get(i))==true) 
+                System.out.print(a.get(i)+"+");
+                s=s+a.get(i);
+        }
+        System.out.println("\b="+s);
+    }
+    public static void main(String [] x){
+        mangTongNT a=new mangTongNT();
+        a.input();
+        a.output();
+    }
+}
